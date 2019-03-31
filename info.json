@@ -1,0 +1,10 @@
+{
+  "name": "ZoomingReinvented",
+  "version": "1.0.0",
+  "factorio_version": "0.17",
+  "title": "Zooming Reinvented",
+  "author": "Jarcionek",
+  "description": "This mod allows to heavily customise the zooming behaviour, in particular it allows to:\n - change how far you can zoom out (and still see the world)\n - change how aggressive the zooming is (equivalent to changing mouse wheel sensitivity)\n - change at what position at zoom level the map opens\n - zoom in or out instantly with a single key stroke",
+  "homepage": "https://github.com/Jarcionek/Factorio-Zooming-Reinvented",
+  "dependencies": ["base"]
+}
