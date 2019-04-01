@@ -3,7 +3,7 @@ data:extend({
         type = "double-setting",
         name = "ZoomingReinvented_zoom-sensitivity",
         setting_type = "runtime-per-user",
-        default_value = 1.1,
+        default_value = 1.5,
         maximum_value = 5.0,
         minimum_value = 1.01,
         order = "01"

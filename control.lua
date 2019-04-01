@@ -7,10 +7,14 @@ script.on_event("ZoomingReinvented_alt-zoom-in", function(event)
     if player.render_mode == defines.render_mode.game or player.render_mode == defines.render_mode.chart_zoomed_in then
         player.zoom = zoom_calculator.calculate_zoomed_in_level(player)
     else
+        --TODO just update by whatever the default sensitiviy is...
         -- cannot do anything here, can I? needs to be using game's default alternative zoom in so that it
         -- respects mouse pointer position and switches to world view...
     end
 end)
+
+--TODO when opening map, I need to reset the mod's remembered zoom level to whatever level map opens at...
+-- it is 0.0313 but it remembers the last zoom used...
 
 script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
     local player = game.players[event.player_index]
@@ -43,3 +47,15 @@ script.on_event(defines.events.on_selected_entity_changed, function(event)
         player_memory.set_last_known_map_position(player, player.selected.position)
     end
 end)
+
+--script.on_configuration_changed(function()
+--    player_memory.initialise()
+--end)
+
+script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
+    local player = game.players[event.player_index]
+    player.print("wiping!")
+    player_memory.wipe_memory(player)
+    player.zoom = 1
+end)
+
