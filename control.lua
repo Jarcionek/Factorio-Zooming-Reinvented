@@ -12,6 +12,9 @@ script.on_event("ZoomingReinvented_alt-zoom-in", function(event)
         -- respects mouse pointer position and switches to world view...
 
         --TODO what when this causes a switch to world view?
+
+        --TODO when this event is fired, the player.render_mode is an old value, therefore I need to calculate myself
+        -- whether it will result in a switch to zoom to world view...
     end
 end)
 
