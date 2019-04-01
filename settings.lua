@@ -16,5 +16,14 @@ data:extend({
         maximum_value = 1.0,
         minimum_value = 0.0001,
         order = "02"
+    },
+    {
+        type = "double-setting",
+        name = "ZoomingReinvented_default-map-zoom-level",
+        setting_type = "runtime-per-user",
+        default_value = 0.0313,
+        maximum_value = 1.0,
+        minimum_value = 0.0001,
+        order = "03"
     }
 })

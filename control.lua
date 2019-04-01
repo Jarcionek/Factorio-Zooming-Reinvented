@@ -10,6 +10,8 @@ script.on_event("ZoomingReinvented_alt-zoom-in", function(event)
         --TODO just update by whatever the default sensitiviy is...
         -- cannot do anything here, can I? needs to be using game's default alternative zoom in so that it
         -- respects mouse pointer position and switches to world view...
+
+        --TODO what when this causes a switch to world view?
     end
 end)
 
@@ -38,6 +40,19 @@ script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
 
     if player.render_mode == defines.render_mode.chart then
         player.open_map(player_memory.get_last_known_map_position(player), zoom_level)
+    end
+end)
+
+script.on_event("ZoomingReinvented_toggle-map", function(event)
+    local player = game.players[event.player_index]
+
+    if player.render_mode == defines.render_mode.game then
+        player.open_map(player.position, player.mod_settings["ZoomingReinvented_default-map-zoom-level"].value)
+        --TODO set the zoom level in the memory
+    else
+        player.close_map()
+        player.zoom = 1 --TODO set the zoom level to what? does calculator need to handle what is the actual range (exactly)?
+        player_memory.wipe_memory(player) -- TODO this also wipes the last know map position which will prevent reopening it :/
     end
 end)
 

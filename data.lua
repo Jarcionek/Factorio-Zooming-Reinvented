@@ -26,5 +26,12 @@ data:extend {
         key_sequence = "",
         linked_game_control = "alt-zoom-out",
         consumes = "all"
+    },
+    {
+        type = "custom-input",
+        name = "ZoomingReinvented_toggle-map",
+        key_sequence = "",
+        linked_game_control = "toggle-map",
+        consumes = "all"
     }
 }
