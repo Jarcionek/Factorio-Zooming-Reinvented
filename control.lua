@@ -18,9 +18,6 @@ script.on_event("ZoomingReinvented_alt-zoom-in", function(event)
     end
 end)
 
---TODO when opening map, I need to reset the mod's remembered zoom level to whatever level map opens at...
--- it is 0.0313 but it remembers the last zoom used...
-
 script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
     local player = game.players[event.player_index]
     local is_already_maximally_zoomed_out = zoom_calculator.is_maximally_zoomed_out_zoom_to_world_view(player)
@@ -50,8 +47,8 @@ script.on_event("ZoomingReinvented_toggle-map", function(event)
     local player = game.players[event.player_index]
 
     if player.render_mode == defines.render_mode.game then
-        player.open_map(player.position, player.mod_settings["ZoomingReinvented_default-map-zoom-level"].value)
-        --TODO set the zoom level in the memory
+        local zoom_level = zoom_calculator.calculate_open_map_zoom_level(player)
+        player.open_map(player.position, zoom_level)
     else
         player.close_map()
         player.zoom = 1 --TODO set the zoom level to what? does calculator need to handle what is the actual range (exactly)?

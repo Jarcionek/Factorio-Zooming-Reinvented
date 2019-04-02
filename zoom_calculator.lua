@@ -57,4 +57,10 @@ function calculator.is_maximally_zoomed_out_zoom_to_world_view(player)
     end
 end
 
+function calculator.calculate_open_map_zoom_level(player)
+    local zoom_level = player.mod_settings["ZoomingReinvented_default-map-zoom-level"].value
+    player_memory.set_current_zoom_level(player, zoom_level)
+    return zoom_level
+end
+
 return calculator
