@@ -22,7 +22,7 @@ data:extend({
         name = "ZoomingReinvented_default-map-zoom-level",
         setting_type = "runtime-per-user",
         default_value = 0.0313,
-        maximum_value = 1.0, -- TODO this should be lower tha max-world-zoom-out, if I can't enforce it here, I can do so in zoom_calculator.calculate_open_map_zoom_level()
+        maximum_value = 1.0, -- TODO this should be lower than max-world-zoom-out, if I can't enforce it here, I can do so in zoom_calculator.calculate_open_map_zoom_level()
         minimum_value = 0.0001,
         order = "03"
     }

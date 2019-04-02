@@ -7,14 +7,7 @@ script.on_event("ZoomingReinvented_alt-zoom-in", function(event)
     if player.render_mode == defines.render_mode.game or player.render_mode == defines.render_mode.chart_zoomed_in then
         player.zoom = zoom_calculator.calculate_zoomed_in_level(player)
     else
-        --TODO just update by whatever the default sensitiviy is...
-        -- cannot do anything here, can I? needs to be using game's default alternative zoom in so that it
-        -- respects mouse pointer position and switches to world view...
-
-        --TODO what when this causes a switch to world view?
-
-        --TODO when this event is fired, the player.render_mode is an old value, therefore I need to calculate myself
-        -- whether it will result in a switch to zoom to world view...
+        zoom_calculator.update_current_zoom_by_user_zooming_in_on_the_map(player)
     end
 end)
 
@@ -62,10 +55,6 @@ script.on_event(defines.events.on_selected_entity_changed, function(event)
         player_memory.set_last_known_map_position(player, player.selected.position)
     end
 end)
-
---script.on_configuration_changed(function()
---    player_memory.initialise()
---end)
 
 script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
     local player = game.players[event.player_index]

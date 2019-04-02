@@ -63,4 +63,10 @@ function calculator.calculate_open_map_zoom_level(player)
     return zoom_level
 end
 
+function calculator.update_current_zoom_by_user_zooming_in_on_the_map(player)
+    local zoom_level = player_memory.get_current_zoom_level(player)
+    zoom_level = zoom_level * constant.BASE_GAME_ANY_MAP_ZOOM_SENSITIVITY
+    player_memory.set_current_zoom_level(player, zoom_level)
+end
+
 return calculator
