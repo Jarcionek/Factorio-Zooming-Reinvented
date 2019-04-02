@@ -4,34 +4,34 @@ data:extend {
         name = "ZoomingReinvented_zoom-in",
         key_sequence = "",
         linked_game_control = "zoom-in",
-        consumes = "all"
+        consuming = "game-only"
     },
     {
         type = "custom-input",
         name = "ZoomingReinvented_zoom-out",
         key_sequence = "",
         linked_game_control = "zoom-out",
-        consumes = "all"
+        consuming = "game-only"
     },
     {
         type = "custom-input",
         name = "ZoomingReinvented_alt-zoom-in",
         key_sequence = "",
         linked_game_control = "alt-zoom-in",
-        consumes = "none"
+        consuming = "none"
     },
     {
         type = "custom-input",
         name = "ZoomingReinvented_alt-zoom-out",
         key_sequence = "",
         linked_game_control = "alt-zoom-out",
-        consumes = "all"
+        consuming = "game-only"
     },
     {
         type = "custom-input",
         name = "ZoomingReinvented_toggle-map",
         key_sequence = "",
         linked_game_control = "toggle-map",
-        consumes = "all"
+        consuming = "game-only"
     }
 }

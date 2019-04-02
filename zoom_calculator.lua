@@ -46,13 +46,25 @@ function calculator.calculate_zoomed_out_level(player)
     return player_memory.get_current_zoom_level(player)
 end
 
-function calculator.is_maximally_zoomed_out_zoom_to_world_view(player)
-    if player.render_mode == defines.render_mode.chart_zoomed_in then
-        local max_world_zoom_out_level = player.mod_settings["ZoomingReinvented_max-world-zoom-out"].value
-        return player_memory.get_current_zoom_level(player) == max_world_zoom_out_level
-    else
-        return false
+function calculator.should_switch_back_to_map(player)
+    local current_zoom_level = player_memory.get_current_zoom_level(player)
+    local max_world_zoom_out_level = player.mod_settings["ZoomingReinvented_max-world-zoom-out"].value
+    return player.render_mode == defines.render_mode.chart_zoomed_in and current_zoom_level == max_world_zoom_out_level
+end
+
+function calculator.calculate_zoom_out_back_to_map_view(player)
+    local zoom_sensitivity = player.mod_settings["ZoomingReinvented_zoom-sensitivity"].value
+
+    local new_zoom_level = player_memory.get_current_zoom_level(player) / zoom_sensitivity
+    local max_zoom_out_level = constant.MAX_MAP_ZOOM_OUT_LEVEL
+
+    if new_zoom_level < max_zoom_out_level then
+        new_zoom_level = max_zoom_out_level
     end
+
+    player_memory.set_current_zoom_level(player, new_zoom_level)
+
+    return player_memory.get_current_zoom_level(player)
 end
 
 function calculator.calculate_open_map_zoom_level(player)

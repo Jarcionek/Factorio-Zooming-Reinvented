@@ -13,26 +13,21 @@ end)
 
 script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
     local player = game.players[event.player_index]
-    local is_already_maximally_zoomed_out = zoom_calculator.is_maximally_zoomed_out_zoom_to_world_view(player)
+
+    local should_switch_back_to_map = zoom_calculator.should_switch_back_to_map(player)
+
+    if should_switch_back_to_map then
+        local map_zoom_level = zoom_calculator.calculate_zoom_out_back_to_map_view(player)
+        player.open_map(player_memory.get_last_known_map_position(player), map_zoom_level)
+        return
+    end
+
     local zoom_level = zoom_calculator.calculate_zoomed_out_level(player)
-
-    if player.render_mode == defines.render_mode.game then
-        player.zoom = zoom_level
-        return
-    end
-
-    if player.render_mode == defines.render_mode.chart_zoomed_in then
-        if is_already_maximally_zoomed_out then
-            player.print("this is currently broken, but it should have opened the map at zoom_level " .. zoom_level)
-            player.zoom_to_world(player_memory.get_last_known_map_position(player), zoom_level)
-        else
-            player.zoom = zoom_level
-        end
-        return
-    end
 
     if player.render_mode == defines.render_mode.chart then
         player.open_map(player_memory.get_last_known_map_position(player), zoom_level)
+    else
+        player.zoom = zoom_level
     end
 end)
 
