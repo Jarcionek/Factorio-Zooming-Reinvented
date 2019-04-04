@@ -37,10 +37,11 @@ script.on_event("ZoomingReinvented_toggle-map", function(event)
     if player.render_mode == defines.render_mode.game then
         local zoom_level = zoom_calculator.calculate_open_map_zoom_level(player)
         player.open_map(player.position, zoom_level)
+        player_memory.set_last_known_map_position(player, player.position)
     else
         player.close_map()
-        player.zoom = 1 --TODO set the zoom level to what? does calculator need to handle what is the actual range (exactly)?
-        player_memory.wipe_memory(player) -- TODO this also wipes the last know map position which will prevent reopening it :/
+        player.zoom = 1
+        player_memory.set_current_zoom_level(player, 1)
     end
 end)
 
@@ -50,11 +51,3 @@ script.on_event(defines.events.on_selected_entity_changed, function(event)
         player_memory.set_last_known_map_position(player, player.selected.position)
     end
 end)
-
-script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
-    local player = game.players[event.player_index]
-    player.print("wiping!")
-    player_memory.wipe_memory(player)
-    player.zoom = 1
-end)
-

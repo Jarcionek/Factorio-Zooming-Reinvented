@@ -1,22 +1,18 @@
 local player_memory = {}
 
-local function default_values()
+local function default_values(player)
     return {
-        last_known_map_position = {0, 0},
+        last_known_map_position = player.position,
         current_zoom = 1
     }
 end
 
 local function get_player_memory(player)
     global.player_memory = global.player_memory or {}
-    global.player_memory[player.index] = global.player_memory[player.index] or default_values()
+    global.player_memory[player.index] = global.player_memory[player.index] or default_values(player)
     return global.player_memory[player.index]
 end
 
-function player_memory.wipe_memory(player)
-    global.player_memory = global.player_memory or {}
-    global.player_memory[player.index] = default_values()
-end
 
 function player_memory.get_last_known_map_position(player)
     return get_player_memory(player).last_known_map_position
