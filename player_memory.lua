@@ -3,7 +3,8 @@ local player_memory = {}
 local function default_values(player)
     return {
         last_known_map_position = player.position,
-        current_zoom = 1
+        current_zoom = 1,
+        map_zoom_out_enabled = true
     }
 end
 
@@ -28,6 +29,14 @@ end
 
 function player_memory.set_current_zoom_level(player, zoom_level)
     get_player_memory(player).current_zoom = zoom_level
+end
+
+function player_memory.is_map_zoom_out_enabled(player)
+    return get_player_memory(player).map_zoom_out_enabled
+end
+
+function player_memory.set_map_zoom_out_enabled(player, disabled)
+    get_player_memory(player).map_zoom_out_enabled = disabled
 end
 
 return player_memory
