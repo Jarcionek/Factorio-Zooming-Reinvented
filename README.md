@@ -36,9 +36,9 @@ This mod changes the behaviour of the following game controls:
 Furthermore, it adds the following controls:
 
 * Quick zoom in - opens a map in the 'zoom to world' view, fully zoomed out, at the last known map position. This can be used to:
-  1. Zoom back in to the world after you accidentally zoomed out too much and got switched to the map view.
-  2. Reopen a map at the last known map position after you closed it.
-  3. Zoom out fully if you are already in 'zoom to world' view. Additionally, if you select an object in the world by hovering over it, the map will get centered on this object.
+    1. Zoom back in to the world after you accidentally zoomed out too much and got switched to the map view.
+    2. Reopen a map at the last known map position after you closed it.
+    3. Zoom out fully if you are already in 'zoom to world' view. Additionally, if you select an object in the world by hovering over it, the map will get centered on this object.
 * Quick zoom out - opens a map in the map view at the configured zoom level at the centre of the map
 
 
