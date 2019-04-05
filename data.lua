@@ -36,6 +36,11 @@ data:extend {
     },
     {
         type = "custom-input",
+        name = "ZoomingReinvented_quick-zoom-in",
+        key_sequence = "UP"
+    },
+    {
+        type = "custom-input",
         name = "ZoomingReinvented_quick-zoom-out",
         key_sequence = "DOWN"
     },
