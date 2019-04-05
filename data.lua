@@ -34,6 +34,11 @@ data:extend {
         linked_game_control = "toggle-map",
         consuming = "game-only"
     },
+    {
+        type = "custom-input",
+        name = "ZoomingReinvented_quick-zoom-out",
+        key_sequence = "DOWN"
+    },
 
 
     {
