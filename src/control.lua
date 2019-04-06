@@ -6,6 +6,13 @@ local binoculars_controler = require("binoculars_controler")
 
 
 
+script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
+    local player = game.players[event.player_index]
+    mod_settings.validate_and_fix(player)
+end)
+
+
+
 script.on_event("ZoomingReinvented_alt-zoom-in", function(event)
     local player = game.players[event.player_index]
 
