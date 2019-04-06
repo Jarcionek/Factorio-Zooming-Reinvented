@@ -23,7 +23,7 @@ This mod **replaces** the base game's zooming behaviour to make the user experie
 
 # Controls
 
-![Controls](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/controls.png)
+![Controls](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/screenshots/controls.png)
 
 This mod changes the behaviour of the following game controls:
 
@@ -43,12 +43,12 @@ Furthermore, it adds the following controls:
 
 Finally, it adds a Binoculars item to allow to quickly zoom in to world from the map. See known issues below for an explanation why this item exists at all.
 
-![Binoculars](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/binoculars-screnshot.png)
+![Binoculars](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/screenshots/binoculars-screnshot.png)
 
 
 # Customisation
 
-![Mod settings](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/mod-settings.png)
+![Mod settings](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/screenshots/mod-settings.png)
 
 * Zoom sensitivity - defines how big is the change when zooming in or out. Doesn't apply to zooming in on the map (unless in zoom to world view). Base game's value is about 1.1 when the map is closed and about 1.25 when the map is open (regardless of whether it is in a zoom to world view or in a map view).
 * Max world zoom out level - defines how far you can zoom out and still see the world. In player view it defines maximum zoom out, in the map it defines when zoom to world view switches back to map view. Base game's value is about 0.4.
