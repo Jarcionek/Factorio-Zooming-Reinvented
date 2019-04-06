@@ -11,9 +11,7 @@ This mod allows to heavily customise the zooming behaviour, in particular it all
 * change at what position and zoom level the map opens
 * zoom in or out instantly with a single key stroke (or mouse wheel move)
 
-Note: see homepage/mod portal/readme for a full explanation of how this mod works.
-
-Your help is needed! Please report any bugs and usability issues you find to help make this mod better. Your feedback is much appreciated.
+See homepage/mod portal/readme for a full explanation of how this mod works. Please report any bugs and usability issues you find to help make this mod better - your feedback is much appreciated.
 
 
 # How is this mod different from other mods that allow to zoom out farther than the base game?

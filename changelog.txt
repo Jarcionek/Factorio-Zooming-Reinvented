@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: next
-Date: pending
+Version: 1.2.1
+Date: not released yet
   Changes:
     - Improved the descriptions of the controls and settings - added more information, fixed grammar etc.
 ---------------------------------------------------------------------------------------------------
