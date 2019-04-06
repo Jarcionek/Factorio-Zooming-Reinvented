@@ -44,8 +44,9 @@ data:extend {
         name = "ZoomingReinvented_quick-zoom-out",
         key_sequence = "DOWN"
     },
+}
 
-
+data:extend {
     {
         type = "custom-input",
         name = "ZoomingReinvented_move-down",
@@ -75,5 +76,54 @@ data:extend {
         name = "ZoomingReinvented_drag-map",
         key_sequence = "",
         linked_game_control = "drag-map"
+    }
+}
+
+data:extend {
+    {
+        type = "capsule",
+        name = "ZoomingReinvented_binoculars",
+        subgroup = "tool",
+        order = "z[binoculars]",
+        icons = {
+            {
+                icon = "__ZoomingReinvented__/graphics/binoculars.png",
+                icon_size = 32,
+            }
+        },
+        capsule_action =
+        {
+            type = "artillery-remote",
+            flare = "zoom-in-flare"
+        },
+        flags = {},
+        stack_size = 1,
+        stackable = false
+    },
+    {
+        type = "recipe",
+        name = "ZoomingReinvented_binoculars-recipe",
+        enabled = true,
+        ingredients = {
+            {"iron-plate", 1}
+        },
+        result = "ZoomingReinvented_binoculars",
+    },
+    {
+        type = "artillery-flare",
+        name = "zoom-in-flare",
+        flags = {"placeable-off-grid", "not-on-map"},
+        map_color = {r=0, g=0, b=0},
+        life_time = 1,
+        shots_per_flare = 0,
+        pictures =
+        {
+            {
+                filename = "__ZoomingReinvented__/graphics/binoculars.png",
+                width = 1,
+                height = 1,
+                scale = 0
+            }
+        }
     }
 }

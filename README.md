@@ -41,6 +41,10 @@ Furthermore, it adds the following controls:
     3. Zoom out fully if you are already in 'zoom to world' view. Additionally, if you select an object in the world by hovering over it, the map will get centered on this object.
 * Quick zoom out - opens a map in the map view at the configured zoom level at the centre of the map
 
+Finally, it adds a Binoculars item to allow to quickly zoom in to world from the map. See known issues below for an explanation why this item exists at all.
+
+![Binoculars](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/binoculars-screnshot.png)
+
 
 # Customisation
 
@@ -59,7 +63,7 @@ Furthermore, it adds the following controls:
 
 This is due to limitations in the modding API. It is not possible for a script to just zoom in the map in its current position, the only function available is to set it to a specific position and zoom level. However, it is not possible to get the current map's position. Also, it is not possible to get a position of the mouse pointer, hence the script would not be able to zoom in towards it. Finally, opening a zoom to world view also requires to provide a position and a zoom level. Therefore, the only reasonable option was to leave the zooming in while in the map as it is in the base game.
 
-Workaround coming soon.
+As a workaround, you can use Binoculars item. Note that it can only be used within artillery range. Although it behaves like an artillery remote, don't worry - artillery will not fire at that location.
 
 ### After moving the map (in the map view), zooming out causes the map to jump to another location
 
@@ -76,6 +80,11 @@ Apparently, the scripts are not allowed to set the control to the mouse wheel, b
 
 * After opening a map by clicking on the minimap and zooming out, the map jumps to another location
 * After opening a map by clicking on the "Open this location in map." in the locomotive GUI and zooming out, the map jumps to another location
+
+
+# Credits
+
+Graphics come from http://clipart-library.com/
 
 
 # Changelog
