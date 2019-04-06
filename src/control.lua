@@ -1,12 +1,6 @@
 local player_memory = require("player_memory")
 local zoom_calculator = require("zoom_calculator")
-
-
-local function disable_map_zoom_out(player)
-    if player.render_mode ~= defines.render_mode.game then
-        player_memory.set_map_zoom_out_enabled(player, false)
-    end
-end
+local map_zoom_out_disabler = require("map_zoom_out_disabler")
 
 
 
@@ -17,17 +11,9 @@ script.on_event("ZoomingReinvented_alt-zoom-in", function(event)
         player.zoom = zoom_calculator.calculate_zoomed_in_level(player)
     else
         zoom_calculator.update_current_zoom_by_user_zooming_in_on_the_map(player)
-        disable_map_zoom_out(player)
+        map_zoom_out_disabler.disable(player)
     end
 end)
-
-
-
-local function is_map_zoom_out_enabled(player)
-    local map_zoom_out_disabling_active = player.mod_settings["ZoomingReinvented_disable-map-zoom-out"].value
-    local map_zoom_out_enabled = player_memory.is_map_zoom_out_enabled(player)
-    return not map_zoom_out_disabling_active or map_zoom_out_enabled
-end
 
 script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
     local player = game.players[event.player_index]
@@ -35,7 +21,7 @@ script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
     local should_switch_back_to_map = zoom_calculator.should_switch_back_to_map(player)
 
     if should_switch_back_to_map then
-        if is_map_zoom_out_enabled(player) then
+        if map_zoom_out_disabler.is_enabled(player) then
             local map_zoom_level = zoom_calculator.calculate_zoom_out_back_to_map_view(player)
             player.open_map(player_memory.get_last_known_map_position(player), map_zoom_level)
         end
@@ -43,7 +29,7 @@ script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
     end
 
     if player.render_mode == defines.render_mode.chart then
-        if is_map_zoom_out_enabled(player) then
+        if map_zoom_out_disabler.is_enabled(player) then
             local zoom_level = zoom_calculator.calculate_zoomed_out_level(player)
             player.open_map(player_memory.get_last_known_map_position(player), zoom_level)
         end
@@ -66,7 +52,7 @@ script.on_event("ZoomingReinvented_toggle-map", function(event)
         player.close_map()
         player.zoom = 1
         player_memory.set_current_zoom_level(player, 1)
-        player_memory.set_map_zoom_out_enabled(player, true)
+        map_zoom_out_disabler.enable(player)
     end
 end)
 
@@ -78,7 +64,7 @@ script.on_event(defines.events.on_selected_entity_changed, function(event)
         player_memory.set_last_known_map_position(player, player.selected.position)
     end
     if player.selected then
-        player_memory.set_map_zoom_out_enabled(player, true)
+        map_zoom_out_disabler.enable(player)
     end
 end)
 
@@ -96,7 +82,7 @@ script.on_event("ZoomingReinvented_quick-zoom-in", function(event)
     end
 
     player_memory.set_current_zoom_level(player, zoom_level)
-    player_memory.set_map_zoom_out_enabled(player, true)
+    map_zoom_out_disabler.enable(player)
 end)
 
 script.on_event("ZoomingReinvented_quick-zoom-out", function(event)
@@ -107,8 +93,9 @@ script.on_event("ZoomingReinvented_quick-zoom-out", function(event)
 
     player_memory.set_current_zoom_level(player, zoom_level)
     player_memory.set_last_known_map_position(player, {0, 0})
-    player_memory.set_map_zoom_out_enabled(player, true)
+    map_zoom_out_disabler.enable(player)
 end)
+
 
 
 script.on_event(defines.events.on_player_used_capsule, function(event)
@@ -119,31 +106,33 @@ script.on_event(defines.events.on_player_used_capsule, function(event)
         player.zoom_to_world(position, zoom_level)
         player_memory.set_current_zoom_level(player, zoom_level)
         player_memory.set_last_known_map_position(player, position)
-        player_memory.set_map_zoom_out_enabled(player, true)
+        map_zoom_out_disabler.enable(player)
     end
 end)
 
+
+
 script.on_event("ZoomingReinvented_move-down", function(event)
     local player = game.players[event.player_index]
-    disable_map_zoom_out(player)
+    map_zoom_out_disabler.disable(player)
 end)
 
 script.on_event("ZoomingReinvented_move-left", function(event)
     local player = game.players[event.player_index]
-    disable_map_zoom_out(player)
+    map_zoom_out_disabler.disable(player)
 end)
 
 script.on_event("ZoomingReinvented_move-right", function(event)
     local player = game.players[event.player_index]
-    disable_map_zoom_out(player)
+    map_zoom_out_disabler.disable(player)
 end)
 
 script.on_event("ZoomingReinvented_move-up", function(event)
     local player = game.players[event.player_index]
-    disable_map_zoom_out(player)
+    map_zoom_out_disabler.disable(player)
 end)
 
 script.on_event("ZoomingReinvented_drag-map", function(event)
     local player = game.players[event.player_index]
-    disable_map_zoom_out(player)
+    map_zoom_out_disabler.disable(player)
 end)
