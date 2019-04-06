@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: next
+Date: pending
+  Changes:
+    - Improved the descriptions of the controls and settings - added more information, fixed grammar etc.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 06/04/2019
   Changes:

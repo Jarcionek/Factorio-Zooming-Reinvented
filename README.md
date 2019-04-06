@@ -71,7 +71,7 @@ As a workaround, you can use the Binoculars item. Note that it can only be used 
 
 Because of all the limitations listed above, this mod keeps track of the last entity you selected (i.e. hovered over) and assumes that this is where the map is. If you zoom in to see the world and hover over some buildings (which usually happens all the time, without you even realising it) and then just zoom out to see more world, this works reasonably well. The existing modding API doesn't offer any functionality that could allow to address other use cases.
 
-As a workaround, you might want to disable 'map zoom out after map move' in the Mod Settings. Then the only way to zoom out is to (re)open the map or use 'Quick zoom out'.
+As a workaround, you might want to disable 'map zoom out after map move' in the Mod Settings. Then the only way to zoom out is to reopen the map, use 'Quick zoom out' or zoom in to the 'zoom to world' view and hover over some object - this will update last known map position and allow to zoom out again.
 
 ### 'Quick zoom in' and 'Quick zoom out' controls are not assigned to the mouse wheel by default
 
@@ -80,6 +80,8 @@ Apparently, the scripts are not allowed to set the control to the mouse wheel, b
 
 # Known Bugs (to be addressed)
 
+* Last known map position is not updated when player hovers over an object in the world while holding a blueprint in the hand
+* First zoom in/out after loading the game causes a big zoom level change
 * After opening a map by clicking on the minimap and zooming out, the map jumps to another location
 * After opening a map by clicking on the "Open this location in map." in the locomotive GUI and zooming out, the map jumps to another location
 
