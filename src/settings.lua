@@ -46,9 +46,16 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "ZoomingReinvented_disable-map-zoom-out",
+        name = "ZoomingReinvented_binoculars-double-action-enabled",
         setting_type = "runtime-per-user",
         default_value = false,
         order = "06"
+    },
+    {
+        type = "bool-setting",
+        name = "ZoomingReinvented_disable-map-zoom-out",
+        setting_type = "runtime-per-user",
+        default_value = false,
+        order = "07"
     }
 })

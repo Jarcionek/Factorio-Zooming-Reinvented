@@ -3,6 +3,7 @@ Version: ?
 Date: ?
   Changes:
     - Binoculars zoom level is now configurable.
+    - Added Binoculars double-action setting. When enabled, first use will zoom in only enough to show map labels and second use will zoom in to the configured zoom level.
   Bugfixes:
     - When zooming out after map move is disabled, it is no longer possible to zoom out from the 'zoom to world' view to the map view.
     - Quick zoom out does no longer reset last known map position.
