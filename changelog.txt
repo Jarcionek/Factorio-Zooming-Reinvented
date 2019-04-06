@@ -5,6 +5,7 @@ Date: ?
     - Binoculars zoom level is now configurable.
   Bugfixes:
     - When zooming out after map move is disabled, it is no longer possible to zoom out from the 'zoom to world' view to the map view.
+    - Quick zoom out does no longer reset last known map position.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 06/04/2019
