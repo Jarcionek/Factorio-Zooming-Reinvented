@@ -50,8 +50,8 @@ Finally, it adds a Binoculars item to allow to quickly zoom in to world from the
 
 ![Mod settings](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/screenshots/mod-settings.png)
 
-* Zoom sensitivity - defines how big is the change when zooming in or out. Doesn't apply to zooming in on the map (unless in zoom to world view). Base game's value is about 1.1 when the map is closed and about 1.25 when the map is open (regardless of whether it is in a zoom to world view or in a map view).
-* Max world zoom out level - defines how far you can zoom out and still see the world. In player view it defines maximum zoom out, in the map it defines when zoom to world view switches back to map view. Base game's value is about 0.4.
+* Zoom sensitivity - defines how big is the change when zooming in or out. Doesn't apply to zooming in on the map (unless in 'zoom to world' view). The current zoom level will be multiplied or divided by this value when you zoom in or out. Base game's value is about 1.1 when the map is closed and about 1.25 when the map is open (regardless of whether it is in a 'zoom to world' view or in a map view).
+* Max world zoom out level - defines how far you can zoom out and still see the world. In player view it defines maximum zoom out, in the map it defines when 'zoom to world' view switches back to map view. Base game's value is about 0.4.
 * Default map zoom level - defines at what zoom level the map opens. Base game's value is about 0.0313. Note that map labels disappear at zoom level below 0.0157.
 * 'Quick zoom out' map zoom level - defines at what zoom level the map opens when using 'Quick zoom out'. Note that map labels disappear at zoom level below 0.0157.
 * Binoculars zoom level - defines at what zoom level the map opens when using Binoculars item.
@@ -63,7 +63,7 @@ Finally, it adds a Binoculars item to allow to quickly zoom in to world from the
 
 ### Zooming in while in the map view does not respect "Zoom sensitivity" and "Max world zoom out" mod settings.
 
-This is due to limitations in the modding API. It is not possible for a script to just zoom in the map in its current position, the only function available is to set it to a specific position and zoom level. However, it is not possible to get the current map's position. Also, it is not possible to get a position of the mouse pointer, hence the script would not be able to zoom in towards it. Finally, opening a zoom to world view also requires to provide a position and a zoom level. Therefore, the only reasonable option was to leave the zooming in while in the map as it is in the base game.
+This is due to limitations in the modding API. It is not possible for a script to just zoom in the map in its current position, the only function available is to set it to a specific position and zoom level. However, it is not possible to get the current map's position. Also, it is not possible to get a position of the mouse pointer, hence the script would not be able to zoom in towards it. Finally, opening a 'zoom to world' view also requires to provide a position and a zoom level. Therefore, the only reasonable option was to leave the zooming in while in the map as it is in the base game.
 
 As a workaround, you can use Binoculars item. Note that it can only be used within artillery range. Although it behaves like an artillery remote, don't worry - artillery will not fire at that location.
 
