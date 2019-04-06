@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: ?
-Date: ?
+Version: 1.2.0
+Date: 06/04/2019
   Changes:
     - Binoculars zoom level is now configurable.
     - Added Binoculars double-action setting. When enabled, first use will zoom in only enough to show map labels and second use will zoom in to the configured zoom level.
