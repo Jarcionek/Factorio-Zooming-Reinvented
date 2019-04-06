@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: ?
 Date: ?
+  Changes:
+    - Binoculars zoom level is now configurable.
   Bugfixes:
     - When zooming out after map move is disabled, it is no longer possible to zoom out from the 'zoom to world' view to the map view.
 ---------------------------------------------------------------------------------------------------
