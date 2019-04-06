@@ -43,7 +43,7 @@ Furthermore, it adds the following controls:
 
 Finally, it adds a Binoculars item to allow to quickly zoom in to world from the map. See known issues below for an explanation why this item exists at all.
 
-![Binoculars](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/screenshots/binoculars-screnshot.png)
+![Binoculars](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/screenshots/binoculars-screenshot.png)
 
 
 # Customisation
