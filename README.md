@@ -87,7 +87,4 @@ Apparently, the scripts are not allowed to set the control to the mouse wheel, b
 Graphics come from http://clipart-library.com/
 
 
-# Changelog
-
-### 1.0.0 (05/04/2019)
-* Initial release.
+# [Changelog](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/changelog.txt)

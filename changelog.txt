@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 06/04/2019
+  Changes:
+    - Added Binoculars item that opens a map in the 'zoom to world' view at given position. Can be used from the map view to zoom in quickly. Although it behaves like an artillery remote (including that it can only be used within artillery range), don't worry - artillery will not fire at that location.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 05/04/2019
+  Info:
+    - Initial release.
