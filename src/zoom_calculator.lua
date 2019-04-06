@@ -1,10 +1,11 @@
 local constant = require("constants")
 local player_memory = require("player_memory")
+local mod_settings = require("mod_settings")
 
 local calculator = {}
 
 function calculator.calculate_zoomed_in_level(player)
-    local zoom_sensitivity = player.mod_settings["ZoomingReinvented_zoom-sensitivity"].value
+    local zoom_sensitivity = mod_settings.get_zoom_sensitivity(player)
 
     local new_zoom_level = player_memory.get_current_zoom_level(player) * zoom_sensitivity
 
@@ -25,8 +26,8 @@ function calculator.calculate_zoomed_in_level(player)
 end
 
 function calculator.calculate_zoomed_out_level(player)
-    local zoom_sensitivity = player.mod_settings["ZoomingReinvented_zoom-sensitivity"].value
-    local max_world_zoom_out_level = player.mod_settings["ZoomingReinvented_max-world-zoom-out"].value
+    local zoom_sensitivity = mod_settings.get_zoom_sensitivity(player)
+    local max_world_zoom_out_level = mod_settings.get_max_world_zoom_out(player)
 
     local new_zoom_level = player_memory.get_current_zoom_level(player) / zoom_sensitivity
 
@@ -48,12 +49,12 @@ end
 
 function calculator.should_switch_back_to_map(player)
     local current_zoom_level = player_memory.get_current_zoom_level(player)
-    local max_world_zoom_out_level = player.mod_settings["ZoomingReinvented_max-world-zoom-out"].value
+    local max_world_zoom_out_level = mod_settings.get_max_world_zoom_out(player)
     return player.render_mode == defines.render_mode.chart_zoomed_in and current_zoom_level == max_world_zoom_out_level
 end
 
 function calculator.calculate_zoom_out_back_to_map_view(player)
-    local zoom_sensitivity = player.mod_settings["ZoomingReinvented_zoom-sensitivity"].value
+    local zoom_sensitivity = mod_settings.get_zoom_sensitivity(player)
 
     local new_zoom_level = player_memory.get_current_zoom_level(player) / zoom_sensitivity
     local max_zoom_out_level = constant.MAX_MAP_ZOOM_OUT_LEVEL
@@ -68,7 +69,7 @@ function calculator.calculate_zoom_out_back_to_map_view(player)
 end
 
 function calculator.calculate_open_map_zoom_level(player)
-    local zoom_level = player.mod_settings["ZoomingReinvented_default-map-zoom-level"].value
+    local zoom_level = mod_settings.get_default_map_zoom_level(player)
     player_memory.set_current_zoom_level(player, zoom_level)
     return zoom_level
 end

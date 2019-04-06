@@ -1,4 +1,5 @@
 local player_memory = require("player_memory")
+local mod_settings = require("mod_settings")
 
 local map_zoom_out_disabler = {}
 
@@ -14,7 +15,7 @@ end
 
 
 map_zoom_out_disabler.is_enabled = function (player)
-    local map_zoom_out_disabling_active = player.mod_settings["ZoomingReinvented_disable-map-zoom-out"].value
+    local map_zoom_out_disabling_active = mod_settings.is_disable_map_zoom_out_active(player)
     local map_zoom_out_enabled = player_memory.is_map_zoom_out_enabled(player)
     return not map_zoom_out_disabling_active or map_zoom_out_enabled
 end
