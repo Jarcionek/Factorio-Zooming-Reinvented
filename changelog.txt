@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+Date: 07/04/2019
+  Bugfixes:
+    - Fixed a bug that was disabling zooming in completely if the player had the same key assigned to both 'Zoom in' and 'Alternative zoom in' base game controls.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 07/04/2019
   Minor improvements:

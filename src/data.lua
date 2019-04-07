@@ -4,7 +4,7 @@ data:extend {
         name = "ZoomingReinvented_zoom-in",
         key_sequence = "",
         linked_game_control = "zoom-in",
-        consuming = "game-only"
+        consuming = "none"
     },
     {
         type = "custom-input",
