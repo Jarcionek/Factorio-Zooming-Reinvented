@@ -80,6 +80,7 @@ Apparently, the scripts are not allowed to set the control to the mouse wheel, b
 
 * Last known map position is not updated when player hovers over an object in the world while holding a blueprint in the hand
 * First zoom in/out after loading the game causes a big zoom level change
+* After clicking on the alert to see it on the map and zooming out, the map jumpt to another location
 * After opening a map by clicking on the minimap and zooming out, the map jumps to another location
 * After opening a map by clicking on the "Open this location in map." in the locomotive GUI and zooming out, the map jumps to another location
 
