@@ -65,6 +65,11 @@ script.on_event("ZoomingReinvented_alt-zoom-out", function(event)
     end
 end)
 
+script.on_event("ZoomingReinvented_enable-zoom-out", function(event)
+    local player = game.players[event.player_index]
+    map_zoom_out_disabler.enable(player)
+end)
+
 
 
 script.on_event("ZoomingReinvented_toggle-map", function(event)
@@ -125,8 +130,9 @@ end)
 
 
 script.on_event(defines.events.on_player_used_capsule, function(event)
+    local player = game.players[event.player_index]
+
     if event.item.name == "ZoomingReinvented_binoculars" then
-        local player = game.players[event.player_index]
         binoculars_controler.use(player, event.position)
     end
 end)

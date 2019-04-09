@@ -37,12 +37,20 @@ data:extend {
     {
         type = "custom-input",
         name = "ZoomingReinvented_quick-zoom-in",
-        key_sequence = "UP"
+        key_sequence = "UP",
+        order="01"
     },
     {
         type = "custom-input",
         name = "ZoomingReinvented_quick-zoom-out",
-        key_sequence = "DOWN"
+        key_sequence = "DOWN",
+        order="02"
+    },
+    {
+        type = "custom-input",
+        name = "ZoomingReinvented_enable-zoom-out",
+        key_sequence = "LEFT SHIFT",
+        order="03"
     },
 }
 

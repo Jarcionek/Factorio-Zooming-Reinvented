@@ -38,6 +38,7 @@ Furthermore, it adds the following controls:
     2. Reopen a map at the last known map position after you closed it.
     3. Zoom out fully if you are already in 'zoom to world' view. Additionally, if you select an object in the world by hovering over it, the map will get centered on this object.
 * Quick zoom out - opens a map in the map view at the configured zoom level at the centre of the map
+* Enable zoom out - re-enables zooming out, if you are playing with 'Disable map zoom out after map move' selected and want to zoom out regardless of whether the map jumps to another location.
 
 Finally, it adds a Binoculars item to allow to quickly zoom in to world from the map. See known issues below for an explanation why this item exists at all.
 

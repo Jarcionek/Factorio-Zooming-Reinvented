@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date:
+  Changes:
+    - Added 'enable zoom out' control. This re-enables zooming when you are playing with 'Disable map zoom out after map move' and want to zoom out regardless of whether the map jumps to another location.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.2
 Date: 07/04/2019
   Bugfixes:
