@@ -69,6 +69,7 @@ Finally, it adds a Binoculars item to allow to quickly zoom in to world from the
 * Default map zoom level - defines at what zoom level the map opens. Base game's value is about 0.0313. Note that map labels disappear at zoom level below 0.0157.
 * 'Quick zoom out' map zoom level - defines at what zoom level the map opens when using 'Quick zoom out'. Note that map labels disappear at zoom level below 0.0157.
 * Binoculars zoom level - defines at what zoom level the map opens when using the Binoculars item.
+* Auto equip Binoculars - when 'Quick zoom out' is used, Binoculars will be automatically put in your hand. If you don't have Binoculars in your inventory, they will be given to you for free!
 * Enable Binoculars double-action - if enabled, when using Binoculars in the map view and the labels on the map are not visible, Binoculars will first zoom in only enough to show the map labels. Using them again will zoom in to the configured 'Binoculars zoom level'.
 * Disable map zoom out after map move - defines whether to disable map zooming out after the map position has changed (by dragging, using move controls or zooming in). This is to prevent sudden map position changes when zooming out (see known issues for explanation why this happens). If this option is selected, after you move the map, the only way to zoom out is to close and open the map again, use 'Quick zoom out' or use 'Enable zoom out'.
 
@@ -95,6 +96,7 @@ Apparently, the scripts are not allowed to set the control to the mouse wheel, b
 # Known Bugs (to be addressed)
 
 * Last known map position is not updated when player hovers over an object in the world while holding a blueprint in the hand
+* Auto equiping Binoculars does not reserve an inventory slot for them
 * First zoom in/out after loading the game causes a big zoom level change
 * After clicking on the alert to see it on the map and zooming out, the map jumps to another location
 * After opening a map by clicking on the minimap and zooming out, the map jumps to another location

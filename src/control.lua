@@ -122,6 +122,23 @@ script.on_event("ZoomingReinvented_quick-zoom-out", function(event)
 
     player.open_map({0, 0}, zoom_level)
 
+    if mod_settings.is_bincoulars_auto_equip_enabled(player) then
+        local binoculars_name = "ZoomingReinvented_binoculars"
+        if not player.cursor_stack.valid_for_read or player.cursor_stack.name ~= binoculars_name then
+            local main_inventory = player.get_main_inventory();
+            local binoculars_in_inventory = main_inventory.find_item_stack(binoculars_name)
+
+            if not binoculars_in_inventory and main_inventory.can_insert(binoculars_name) then
+                main_inventory.insert(binoculars_name)
+            end
+            binoculars_in_inventory = main_inventory.find_item_stack(binoculars_name)
+            if binoculars_in_inventory then
+                player.clean_cursor()
+                player.cursor_stack.swap_stack(binoculars_in_inventory)
+            end
+        end
+    end
+
     -- do not reset last_known_map_position to allow to use quick-zoom-in to go back to it
     player_memory.set_current_zoom_level(player, zoom_level)
     map_zoom_out_disabler.enable(player)

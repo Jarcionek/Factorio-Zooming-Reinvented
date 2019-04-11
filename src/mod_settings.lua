@@ -45,6 +45,10 @@ mod_settings.get_binoculars_zoom_level = function(player)
     return player.mod_settings["ZoomingReinvented_binoculars-zoom-level"].value
 end
 
+mod_settings.is_bincoulars_auto_equip_enabled = function(player)
+    return player.mod_settings["ZoomingReinvented_auto-equip-binoculars"].value
+end
+
 mod_settings.is_binoculars_double_action_enabled = function(player)
     return player.mod_settings["ZoomingReinvented_binoculars-double-action-enabled"].value
 end
