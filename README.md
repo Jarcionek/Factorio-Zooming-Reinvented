@@ -8,7 +8,7 @@ This mod allows to heavily customise the zooming behaviour, in particular it all
 
 * change how far you can zoom out (and still see the world)
 * change how aggressive the zooming is (equivalent to changing mouse wheel sensitivity)
-* change at what position and zoom level the map opens
+* re-open a map at the location where it was closed
 * zoom in or out instantly with a single key stroke (or mouse wheel move)
 
 See homepage/mod portal/readme for a full explanation of how this mod works. Please report any bugs and usability issues you find to help make this mod better - your feedback is much appreciated.
@@ -74,6 +74,15 @@ Finally, it adds a Binoculars item to allow to quickly zoom in to world from the
 * Disable map zoom out after map move - defines whether to disable map zooming out after the map position has changed (by dragging, using move controls or zooming in). This is to prevent sudden map position changes when zooming out (see known issues for explanation why this happens). If this option is selected, after you move the map, the only way to zoom out is to close and open the map again, use 'Quick zoom out' or use 'Enable zoom out'.
 
 
+# Planned features
+
+* Make position of 'Quick zoom out' configurable - center of the map (current behaviour), player position or last known map position.
+* Make 'Toggle world map' position configurable - center of the map, player position (current behaviour) or last known map position.
+* Add Binoculars auto trash so that they don't waste an inventory slot.
+* Add a shortcut to get Binoculars (and remove the recipe) so that they can be obtained easily without requiring any items and empty crafting queue (and can be obtained without enabling 'Auto equip Binoculars' mod setting after the recipe is removed).
+* Remember the zoom level when players open a map and restore it when player closes a map.
+
+
 # Known Issues
 
 ### Zooming in while in the map view does not respect 'Zoom sensitivity' and 'Max world zoom out' mod settings
@@ -82,11 +91,20 @@ This is due to limitations in the modding API. It is not possible for a script t
 
 As a workaround, you can use the Binoculars item. Note that it can only be used within the artillery range. Although it behaves like an artillery remote, don't worry - artillery will not fire at that location.
 
-### After moving the map (in the map view), zooming out causes the map to jump to another location
+### zooming out in the map view causes the map to jump to another location
 
 Because of all the limitations listed above, this mod keeps track of the last entity you selected (i.e. hovered over) and assumes that this is where the map is. If you zoom in to see the world and hover over some buildings (which usually happens all the time, without you even realising it) and then just zoom out to see more world, this works reasonably well. The existing modding API doesn't offer any functionality that could allow to address other use cases.
 
-As a workaround, you might want to disable 'map zoom out after map move' in the Mod Settings. Then the only way to zoom out is to reopen the map, use 'Quick zoom out' or zoom in to the 'zoom to world' view and hover over some object - this will update last known map position and allow to zoom out again.
+This can be caused by:
+
+* moving a map (whether with WSAD controls or by dragging)
+* clicking on the minimap to open a map
+* clicking on the alert
+* opening the map from the train GUI
+
+As a workaround for the first case, you might want to disable 'map zoom out after map move' in the Mod Settings. Then the only way to zoom out is to reopen the map, use 'Quick zoom out' or zoom in to the 'zoom to world' view and hover over some object - this will update last known map position and allow to zoom out again. You can also use 'Enable zoom out' control if you don't mind the map position change.
+
+Other three issues unfortunately cannot be addressed with the existing modding API. I have raised [modding interface request](https://forums.factorio.com/viewtopic.php?f=28&t=69156) that would allow to address these issues.
 
 ### 'Quick zoom in' and 'Quick zoom out' controls are not assigned to the mouse wheel by default
 
@@ -96,11 +114,8 @@ Apparently, the scripts are not allowed to set the control to the mouse wheel, b
 # Known Bugs (to be addressed)
 
 * Last known map position is not updated when player hovers over an object in the world while holding a blueprint in the hand
-* Auto equiping Binoculars does not reserve an inventory slot for them
+* Auto equipping Binoculars does not reserve an inventory slot for them
 * First zoom in/out after loading the game causes a big zoom level change
-* After clicking on the alert to see it on the map and zooming out, the map jumps to another location
-* After opening a map by clicking on the minimap and zooming out, the map jumps to another location
-* After opening a map by clicking on the "Open this location in map." in the locomotive GUI and zooming out, the map jumps to another location
 
 
 # Credits
