@@ -104,7 +104,7 @@ This can be caused by:
 
 As a workaround for the first case, you might want to disable 'map zoom out after map move' in the Mod Settings. Then the only way to zoom out is to reopen the map, use 'Quick zoom out' or zoom in to the 'zoom to world' view and hover over some object - this will update last known map position and allow to zoom out again. You can also use 'Enable zoom out' control if you don't mind the map position change.
 
-Other three issues unfortunately cannot be addressed with the existing modding API. I have raised [modding interface request](https://forums.factorio.com/viewtopic.php?f=28&t=69156) that would allow to address these issues.
+Other three issues unfortunately cannot be addressed with the existing modding API. I have raised a [modding interface request](https://forums.factorio.com/viewtopic.php?f=28&t=69156) that would allow to address these issues.
 
 ### 'Quick zoom in' and 'Quick zoom out' controls are not assigned to the mouse wheel by default
 
