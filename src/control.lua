@@ -161,19 +161,23 @@ end)
 
 
 
+local function tag_update(event)
+    if event.player_index then
+        local player = game.players[event.player_index]
+        player_memory.set_last_known_map_position(player, event.tag.position)
+    end
+end
+
 script.on_event(defines.events.on_chart_tag_added, function(event)
-    local player = game.players[event.player_index]
-    player_memory.set_last_known_map_position(player, event.tag.position)
+    tag_update(event)
 end)
 
 script.on_event(defines.events.on_chart_tag_modified, function(event)
-    local player = game.players[event.player_index]
-    player_memory.set_last_known_map_position(player, event.tag.position)
+    tag_update(event)
 end)
 
 script.on_event(defines.events.on_chart_tag_removed, function(event)
-    local player = game.players[event.player_index]
-    player_memory.set_last_known_map_position(player, event.tag.position)
+    tag_update(event)
 end)
 
 
