@@ -1,0 +1,5 @@
+- update screenshots
+
+REFACTORING:
+- shouldn't the action for quick zoom in/out be in the zoom calculator?
+- move auto equip binoculars into a function (another file?)
