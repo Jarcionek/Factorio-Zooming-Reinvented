@@ -132,9 +132,31 @@ end)
 script.on_event(defines.events.on_player_used_capsule, function(event)
     local player = game.players[event.player_index]
 
+    if event.item.name == "artillery-targeting-remote" then
+        player_memory.set_last_known_map_position(player, event.position)
+        map_zoom_out_disabler.enable(player)
+    end
+
     if event.item.name == "ZoomingReinvented_binoculars" then
         binoculars_controler.use(player, event.position)
     end
+end)
+
+
+
+script.on_event(defines.events.on_chart_tag_added, function(event)
+    local player = game.players[event.player_index]
+    player_memory.set_last_known_map_position(player, event.tag.position)
+end)
+
+script.on_event(defines.events.on_chart_tag_modified, function(event)
+    local player = game.players[event.player_index]
+    player_memory.set_last_known_map_position(player, event.tag.position)
+end)
+
+script.on_event(defines.events.on_chart_tag_removed, function(event)
+    local player = game.players[event.player_index]
+    player_memory.set_last_known_map_position(player, event.tag.position)
 end)
 
 

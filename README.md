@@ -19,6 +19,21 @@ See homepage/mod portal/readme for a full explanation of how this mod works. Ple
 This mod **replaces** the base game's zooming behaviour to make the user experience as natural as possible (given the severe restrictions of the modding API). There is no extra GUI buttons, there is no extra keyboard shortcuts, and it doesn't require the map to be closed - there is just the mouse wheel that you are already used to. Also, this mod does much better job at preventing the sudden zoom level changes when using different controls. Finally, this mod adds a lot of customisable settings so you can tailor them to your needs.
 
 
+# 'Last known map position' - what is it and how do I eat it?
+
+Last known map position is where this mod thinks your map position is. This is primarily used when zooming out in the map view. Due to various restrictions/lacking in the modding API, this might occasionally go out of sync - if this happens, you will experience sudden map position change. See known issues below for more details.
+
+There are certain actions that can cause that desync which can be detected by the mod. That's what 'Disable map zoom out after map move' mod setting is for - if you were to experience non-user-friendly behaviour of map jumping to another location, it will simply not allow you to zoom out instead. To be able to zoom out again, you can either use 'Enable zoom out' control, you can do something that will update last known map position or something that will sync the map position - e.g. use 'Quick zoom in' (which opens a map at last known map position) or 'Quick zoom out'.
+
+Last known map position is updated when you:
+
+* open a map using 'Toggle world map' control (default: M)
+* select any object in the world (by hovering with your mouse cursor over it), while in the 'zoom to world' view
+* use Artillery targeting remote
+* use Binoculars
+* create, modify or delete a map tag
+
+
 # Controls
 
 ![Controls](https://raw.githubusercontent.com/Jarcionek/Factorio-Zooming-Reinvented/master/screenshots/controls.png)
@@ -55,7 +70,7 @@ Finally, it adds a Binoculars item to allow to quickly zoom in to world from the
 * 'Quick zoom out' map zoom level - defines at what zoom level the map opens when using 'Quick zoom out'. Note that map labels disappear at zoom level below 0.0157.
 * Binoculars zoom level - defines at what zoom level the map opens when using the Binoculars item.
 * Enable Binoculars double-action - if enabled, when using Binoculars in the map view and the labels on the map are not visible, Binoculars will first zoom in only enough to show the map labels. Using them again will zoom in to the configured 'Binoculars zoom level'.
-* Disable map zoom out after map move - defines whether to disable map zooming out after the map position has changed (by dragging, using move controls or zooming in). This is to prevent sudden map position changes when zooming out (see known issues for explanation why this happens). If this option is selected, after you move the map, the only way to zoom out is to close and open the map again or use 'Quick zoom out'.
+* Disable map zoom out after map move - defines whether to disable map zooming out after the map position has changed (by dragging, using move controls or zooming in). This is to prevent sudden map position changes when zooming out (see known issues for explanation why this happens). If this option is selected, after you move the map, the only way to zoom out is to close and open the map again, use 'Quick zoom out' or use 'Enable zoom out'.
 
 
 # Known Issues

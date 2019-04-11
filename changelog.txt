@@ -3,6 +3,8 @@ Version: 1.3.0
 Date:
   Changes:
     - Added 'enable zoom out' control. This re-enables zooming when you are playing with 'Disable map zoom out after map move' and want to zoom out regardless of whether the map jumps to another location.
+    - Updated readme with a detailed description of what is 'last known map position'.
+    - Last known map position is now updated when using Artillery targeting remote and when creating, modifying or delete map tags.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.2
 Date: 07/04/2019
