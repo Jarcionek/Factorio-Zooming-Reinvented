@@ -159,9 +159,9 @@ script.on_event(defines.events.on_player_used_capsule, function(event)
     end
 end)
 
+-- TODO left clicking on the station in the map view (that opens GUI), re-enables zooming out at the previous last known map position - what is causing that?
 
-
-local function tag_update(event)
+local function tag_update(event) -- doesn't work for some reason, neither of the trio... :/
     if event.player_index then
         local player = game.players[event.player_index]
         player_memory.set_last_known_map_position(player, event.tag.position)
