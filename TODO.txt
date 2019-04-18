@@ -1,5 +1,7 @@
 - update screenshots
 
+- make binoculars cursor-only item: https://github.com/shanemadden/factorio-power-grid-comb/commit/75b028019427737f676e6382a02f8843d7669ead
+
 REFACTORING:
 - shouldn't the action for quick zoom in/out be in the zoom calculator?
 - move auto equip binoculars into a function (another file?)
